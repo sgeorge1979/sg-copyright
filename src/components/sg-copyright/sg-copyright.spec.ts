@@ -1,36 +1,36 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { MyComponent } from './my-component';
+import { SgCopyright } from './sg-copyright';
 
-describe('my-component', () => {
+describe('sg-copyright', () => {
   it('renders', async () => {
     const { root } = await newSpecPage({
-      components: [MyComponent],
-      html: '<my-component></my-component>',
+      components: [SgCopyright],
+      html: '<sg-copyright></sg-copyright>',
     });
     expect(root).toEqualHtml(`
-      <my-component>
+      <sg-copyright>
         <mock:shadow-root>
           <div>
             Hello, World! I'm
           </div>
         </mock:shadow-root>
-      </my-component>
+      </sg-copyright>
     `);
   });
 
   it('renders with values', async () => {
     const { root } = await newSpecPage({
-      components: [MyComponent],
-      html: `<my-component first="Stencil" middle="'Don't call me a framework'" last="JS"></my-component>`,
+      components: [SgCopyright],
+      html: `<sg-copyright first="Stencil" middle="'Don't call me a framework'" last="JS"></sg-copyright>`,
     });
     expect(root).toEqualHtml(`
-      <my-component first="Stencil" middle="'Don't call me a framework'" last="JS">
+      <sg-copyright first="Stencil" middle="'Don't call me a framework'" last="JS">
         <mock:shadow-root>
           <div>
             Hello, World! I'm Stencil 'Don't call me a framework' JS
           </div>
         </mock:shadow-root>
-      </my-component>
+      </sg-copyright>
     `);
   });
 });

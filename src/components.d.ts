@@ -6,56 +6,40 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface SgCopyright {
+        "color"?: string;
+        "company": string;
+        "from": string;
+        "placement": 'left' | 'right' |'center';
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLSgCopyrightElement extends Components.SgCopyright, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLSgCopyrightElement: {
+        prototype: HTMLSgCopyrightElement;
+        new (): HTMLSgCopyrightElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "sg-copyright": HTMLSgCopyrightElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface SgCopyright {
+        "color"?: string;
+        "company"?: string;
+        "from"?: string;
+        "placement"?: 'left' | 'right' |'center';
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "sg-copyright": SgCopyright;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "sg-copyright": LocalJSX.SgCopyright & JSXBase.HTMLAttributes<HTMLSgCopyrightElement>;
         }
     }
 }

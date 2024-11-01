@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+.cr-align-center {
+  padding: 5px;
+  text-align: center;
+}
+
+.cr-align-left {
+  padding: 5px;
+  text-align: left;
+}
+
+.cr-align-right {
+  padding: 5px;
+  text-align: right;
+}
