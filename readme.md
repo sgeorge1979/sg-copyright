@@ -24,10 +24,9 @@ you can consume it in your application as shown below:
 | `company`   | `company`   |  `string`                        | (Optional) Used to Specify the company name          |
 | `from`      | `from`      |  `string`                        | (Optional) Used to Specify the Start Year            | 
 | `placement` | `placement` |  `"center" | "left" | "right"`   | (Optional) Align the content, Default Left Align     |
-| `locale` | `locale` |   `"en" | "es"`                 | (Optional) localization (en, es), Default is en      |
+| `locale   ` | `locale   ` |   `"en" | "es"`                  | (Optional) localization (en, es), Default is en      |
 
-
-Example:
+Eg:
 
 ```
 <sg-copyright placement="center" from="2020" company="ABCD Crop" lang="en" color="red">
