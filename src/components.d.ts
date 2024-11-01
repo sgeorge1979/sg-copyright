@@ -10,6 +10,7 @@ export namespace Components {
         "color"?: string;
         "company": string;
         "from": string;
+        "locale": 'en' | 'es';
         "placement": 'left' | 'right' |'center';
     }
 }
@@ -29,6 +30,7 @@ declare namespace LocalJSX {
         "color"?: string;
         "company"?: string;
         "from"?: string;
+        "locale"?: 'en' | 'es';
         "placement"?: 'left' | 'right' |'center';
     }
     interface IntrinsicElements {

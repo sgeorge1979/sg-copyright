@@ -1,5 +1,5 @@
 import { Component, Prop, h, Element,State } from '@stencil/core';
-import { getLocaleComponentStrings } from '../../utils/locale';
+//import { getLocaleComponentStrings } from '../../utils/locale';
 
 @Component({
   tag: 'sg-copyright',
@@ -13,6 +13,7 @@ export class SgCopyright {
   @Prop() from: string;
   @Prop() placement: 'left' | 'right' |'center';
   @Prop() color?: string;
+  @Prop() locale: 'en' | 'es';
   @State() colorValue: string;
 
   getTypeClass() {
@@ -33,7 +34,7 @@ export class SgCopyright {
     return result;
 }
 async componentWillLoad(): Promise<void> {
-  this.strings = await getLocaleComponentStrings(this.element);
+  //this.strings = await getLocaleComponentStrings(this.element);
   this.setColor();
 }
 
@@ -62,7 +63,7 @@ getCurrentYear() {
 render() {
   return (
     <div class={this.getTypeClass()} style={{ color: this.colorValue }}>© {this.from !=null ? this.from +' - '+this.getCurrentYear() + " " : this.getCurrentYear()+" "}
-      {this.company !=null ? this.company+', ' : ''} {this.strings.rights} 
+      {this.company !=null ? this.company+', ' : ''}  {this.locale =='es' ? ' Reservados todos los derechos.' : ' All Rights Reserved.'}     
     </div>
 
    );

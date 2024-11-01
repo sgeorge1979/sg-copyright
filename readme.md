@@ -24,9 +24,10 @@ you can consume it in your application as shown below:
 | `company`   | `company`   |  `string`                        | (Optional) Used to Specify the company name          |
 | `from`      | `from`      |  `string`                        | (Optional) Used to Specify the Start Year            | 
 | `placement` | `placement` |  `"center" | "left" | "right"`   | (Optional) Align the content, Default Left Align     |
-| `lang     ` | `lang     ` |   `"en" | "es"`                 | (Optional) localization (en, es), Default is en      |
+| `locale` | `locale` |   `"en" | "es"`                 | (Optional) localization (en, es), Default is en      |
 
-Eg:
+
+Example:
 
 ```
 <sg-copyright placement="center" from="2020" company="ABCD Crop" lang="en" color="red">
@@ -52,7 +53,35 @@ And somewhere near the bottom we'll call this function.
 defineCustomElements();
 ```
 
-Next, in `app.component.html` you utilize your new custom element. 
+Next, in `app.module.ts` add the CUSTOM_ELEMENTS_SCHEMA.
+
+```
+import {CUSTOM_ELEMENTS_SCHEMA} from `@angular/core`;
+```
+and then
+
+```
+schemas: [
+    CUSTOM_ELEMENTS_SCHEMA
+]
+```
+Your `app.module.ts` should look like this:
+
+```
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+@NgModule({
+  declarations: [],
+  imports: [],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+
+export class AppModule { }
+```
+
+Now, in `app.component.html` you utilize your new custom element. 
 
 ```
 <sg-copyright placement="center" from="2020" company="ABCD Crop" lang="en" color="red"></sg-copyright>
