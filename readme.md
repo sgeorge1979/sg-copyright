@@ -18,18 +18,18 @@ you can consume it in your application as shown below:
 ```
 
 ## Options
-| Property    | Attribute   | Type                             | Description                                          |
-| ----------- | ----------- | ---------------------------------| -----------------------------------------------------| 
-| `color`     | `color`     |  `string`                        | (Optional) Used to Specify the font color, Default: Black            |
-| `company`   | `company`   |  `string`                        | (Optional) Used to Specify the company name          |
-| `from`      | `from`      |  `string`                        | (Optional) Used to Specify the Start Year            | 
-| `placement` | `placement` |  `"center" | "left" | "right"`   | (Optional) Align the content, Default Left Align     |
-| `locale   ` | `locale   ` |   `"en" | "es"`                  | (Optional) localization (en, es), Default is en      |
+| Property    | Attribute   | Type                     | Description                                                 |
+| ----------- | ----------- | :-----------------------:|:----------------------------------------------------------: | 
+| `color`     | `color`     |  `string`                | (Optional) Used to Specify the font color, Default: Black   |
+| `company`   | `company`   |  `string`                | (Optional) Used to Specify the company name                 |
+| `from`      | `from`      |  `string`                | (Optional) Used to Specify the Start Year                   |
+| `placement` | `placement`  | `"center" ,"left" ,"right"`   | (Optional) Align the content, Default Left Align            |
+| `locale   ` | `locale   ` | `"en" ,"es"`                | (Optional) localization (en, es), Default is en             |
 
 Eg:
 
 ```
-<sg-copyright placement="center" from="2020" company="ABCD Crop" lang="en" color="red">
+<sg-copyright placement="center" from="2020" company="ABCD Crop" locale="en" color="red">
 </sg-copyright>
 ```
 
@@ -83,7 +83,7 @@ export class AppModule { }
 Now, in `app.component.html` you utilize your new custom element. 
 
 ```
-<sg-copyright placement="center" from="2020" company="ABCD Crop" lang="en" color="red"></sg-copyright>
+<sg-copyright placement="center" from="2020" company="ABCD Crop" locale="en" color="red"></sg-copyright>
 ```
 
 ### React
