@@ -79,6 +79,7 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 export class AppModule { }
 ```
+Please Note: schemas: [ CUSTOM_ELEMENTS_SCHEMA ] need to be added to each component where you are using custom HTML tags.
 
 Now, in `app.component.html` you utilize your new custom element. 
 
@@ -87,7 +88,7 @@ Now, in `app.component.html` you utilize your new custom element.
 ```
 
 ### React
-Now we'll add an import to `main.js`
+Now we'll add an import to `index.js`
 
 ```
 import { defineCustomElements} from '../node_modules/sg-copyright/loader';
@@ -134,4 +135,14 @@ export default {
   name: 'App',
 }
 </script>
+```
+Please Note: If you are using multiple component then you can define the defineCustomElements as shown below:
+```
+import { defineCustomElements as defineCustomElements1} from '../node_modules/sg-copyright/loader';
+import { defineCustomElements as defineCustomElements2} from '../node_modules/sg-avatar/loader';
+.
+.
+.
+  defineCustomElements1();
+  defineCustomElements2();
 ```
